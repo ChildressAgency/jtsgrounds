@@ -1,0 +1,21 @@
+html{
+  font-size: 18px;
+}
+body{
+  font-family: $font-family-main;
+  font-size: 1rem;
+  $color: $color-main;
+}
+
+@include media-breakpoint-up(md){
+  body{
+    padding-top: 99px;
+  }
+}
+
+h1{
+  font-size: 4rem;
+}
+h2{
+  font-size: 3.111rem;
+}

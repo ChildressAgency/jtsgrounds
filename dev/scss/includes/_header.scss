@@ -1,0 +1,135 @@
+#masthead{
+  background-color: $color-main;
+  color: #fff;
+  padding-top: .1667rem;
+  padding-bottom: .1667rem;
+
+  .call-us{
+    font-size: 1.111rem;
+    font-weight: $font-weight-bold;
+    text-align: right;
+    margin-bottom: 0;
+
+    a{
+      font-weight: $font-weight-normal;
+      color: #fff;
+
+      &:hover,
+      &:focus{
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+#header{
+  .navbar{
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+  }
+
+  .logo{
+    position: absolute;
+    top: -35px;
+  }
+}
+
+.navbar-toggler{
+  margin-left: auto;
+  border: 2px solid $color-main;
+
+  .icon-bars{
+    height: 30px;
+    width: 30px;
+    fill: $color-main;
+  }
+
+  &:focus{
+    outline: none;
+  }
+}
+
+.navbar-nav{
+  .nav-link{
+    color: $color-main;
+    font-size: 1.111rem;
+
+    &::before{
+      content: attr(title);
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+      display: block;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &.nav-item.actvie .nav-link,
+  .nav-link:hover,
+  .nav-link:focus{
+    font-weight: $font-weight-bold;
+    color: $color-main;
+  }
+}
+
+.dropdown-menu{
+  .dropdown-item{
+    color: $color-main;
+    position: relative;
+    padding-left: 44px;
+
+    &::before{
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 5px;
+      background-image: url(images/sprites.png);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      height: 27px;
+      width: 28px;
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+  }
+
+  .nav-item.active .dropdown-item,
+  .nav-item .dropdown-item:hover,
+  .nav-item .dropdown-item:focus{
+    background-color: transparent;
+    color: $color-alt-dark;
+
+    &::before{
+      opacity: 1;
+    }
+  }
+}
+
+
+@include media-breakpoint-up(md){
+  #header{
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+  }
+
+  .dropdown-menu{
+    left: -30px;
+  }
+}
+@include media-breakpoint-down(md){
+  #header-nav .navbar-nav{
+    margin-top: 100px;
+  }
+}
+@include media-breakpoint-only(xs){
+  #header .logo{
+    top: -10px;
+  }
+  #header-nav .navbar-nav{
+    margin-top: 120px;
+  }
+}
