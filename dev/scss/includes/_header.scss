@@ -24,6 +24,9 @@
 }
 
 #header{
+  position: relative;
+  z-index: 99999;
+
   .navbar{
     position: relative;
     background-color: #fff;
@@ -112,7 +115,6 @@
   #header{
     position: fixed;
     width: 100%;
-    z-index: 9999;
     top: 0;
   }
 
