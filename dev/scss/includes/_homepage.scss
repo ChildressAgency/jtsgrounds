@@ -1,0 +1,279 @@
+#mission{
+  padding-top: 40px;
+  padding-bottom: 60px;
+  overflow: hidden;
+
+  .section-content{
+    position: relative; 
+    z-index: 5;
+  }
+
+  h2{
+    font-size: 1.556rem;
+    font-weight: $font-weight-bold;
+  }
+
+  .slogan{
+    font-size: 2.333rem;
+    font-weight: $font-weight-black;
+  }
+}
+
+.bg-text{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) !important;
+  font-size: 300px;
+  text-transform: uppercase;
+  color: #e8e8e8;
+  opacity: .5;
+  font-weight: $font-weight-black;
+  z-index: 3;
+}
+
+@include media-breakpoint-down(sm){
+  .mission-img{
+    margin-top: 25px;
+  }
+}
+@include media-breakpoint-only(md){
+  .bg-text{
+    font-size: 210px;
+  }
+}
+@include media-breakpoint-only(sm){
+  .bg-text{
+    font-size: 140px;
+  }
+}
+@include media-breakpoint-only(xs){
+  .bg-text{
+    font-size: 88px;
+  }
+}
+
+#our-team{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  color: #fff;
+  text-align: right;
+
+  h2{
+    font-size: 5rem;
+    letter-spacing: 6px;
+  }
+  p{
+    font-size: 1.333rem;
+  }
+}
+
+.services-left-side,
+.services-right-side{
+  height: 900px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.services-left-side{
+  background-image: url(images/lawn.jpg);
+
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background: rgba(73,131,72,1);
+    background: -moz-linear-gradient(top, rgba(73,131,72,1) 0%, rgba(73,131,72,1) 16%, rgba(73,131,72,0.27) 77%, rgba(73,131,72,0) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(73,131,72,1)), color-stop(16%, rgba(73,131,72,1)), color-stop(77%, rgba(73,131,72,0.27)), color-stop(100%, rgba(73,131,72,0)));
+    background: -webkit-linear-gradient(top, rgba(73,131,72,1) 0%, rgba(73,131,72,1) 16%, rgba(73,131,72,0.27) 77%, rgba(73,131,72,0) 100%);
+    background: -o-linear-gradient(top, rgba(73,131,72,1) 0%, rgba(73,131,72,1) 16%, rgba(73,131,72,0.27) 77%, rgba(73,131,72,0) 100%);
+    background: -ms-linear-gradient(top, rgba(73,131,72,1) 0%, rgba(73,131,72,1) 16%, rgba(73,131,72,0.27) 77%, rgba(73,131,72,0) 100%);
+    background: linear-gradient(to bottom, rgba(73,131,72,1) 0%, rgba(73,131,72,1) 16%, rgba(73,131,72,0.27) 77%, rgba(73,131,72,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#498348', endColorstr='#498348', GradientType=0 );
+  }
+}
+
+.services-right-side{
+  background-image: url(images/bush-bg.jpg);
+
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background: rgba(42,92,52,0);
+    background: -moz-linear-gradient(top, rgba(42,92,52,0) 0%, rgba(42,92,52,0.27) 23%, rgba(42,92,52,1) 84%, rgba(42,92,52,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(42,92,52,0)), color-stop(23%, rgba(42,92,52,0.27)), color-stop(84%, rgba(42,92,52,1)), color-stop(100%, rgba(42,92,52,1)));
+    background: -webkit-linear-gradient(top, rgba(42,92,52,0) 0%, rgba(42,92,52,0.27) 23%, rgba(42,92,52,1) 84%, rgba(42,92,52,1) 100%);
+    background: -o-linear-gradient(top, rgba(42,92,52,0) 0%, rgba(42,92,52,0.27) 23%, rgba(42,92,52,1) 84%, rgba(42,92,52,1) 100%);
+    background: -ms-linear-gradient(top, rgba(42,92,52,0) 0%, rgba(42,92,52,0.27) 23%, rgba(42,92,52,1) 84%, rgba(42,92,52,1) 100%);
+    background: linear-gradient(to bottom, rgba(42,92,52,0) 0%, rgba(42,92,52,0.27) 23%, rgba(42,92,52,1) 84%, rgba(42,92,52,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a5c34', endColorstr='#2a5c34', GradientType=0 );
+  }
+}
+
+#services-bubbles{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  overflow: hidden;
+
+  h2{
+    font-size: 5rem;
+    letter-spacing: 6px;
+    text-shadow: 3px 3px 8px #000;
+    float: right;
+  }
+
+  .container{
+    position: relative;
+    height: 100%;
+  }
+}
+
+.service-bubble{
+  height: 200px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 50%;
+  transition: all .3s ease;
+  position: absolute;
+  /*transform: translate(-50%, -50%);*/
+  transform-origin: 50%;
+  color: #fff;
+
+  h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 3px 3px 8px #000;
+    text-align: center;
+    font-weight: $font-weight-bold;
+    font-size: 1.222rem;
+    transition: all .3s ease;
+    z-index: 15;
+    color: #fff;
+  }
+  .bubble-inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    /*border: 10px solid transparent;*/
+    overflow: hidden;
+    z-index: 5;
+
+    &::after{
+      content: "";
+      position: absolute;
+      top: 140%;
+      left: 0;
+      height: 110%;
+      width: 110%;
+      background-color: $color-alt;
+      box-shadow: 0px 0px 30px 30px $color-alt;
+      transition: all 1s ease;
+    }
+
+    
+  }
+
+  &:hover{
+    transform: scale(1.4) perspective(1px);
+    color: #fff;
+
+    .bubble-inner{
+      border-color: $color-alt;
+
+      &::after{
+        top: -1%;
+      }
+    }
+  }
+}
+
+#bubble-1{
+  top: 5%;
+  left: 0;
+}
+#bubble-2{
+  top: 20%;
+  left: 65%;
+}
+#bubble-3{
+  top: 50%;
+  left: 35%;
+}
+#bubble-4{
+  top: 68%;
+  left: 80%;
+}
+#bubble-5{
+  top: 62%;
+  left: 5%;
+}
+
+@include media-breakpoint-down(lg){
+  #services-bubbles h2{
+    text-align: right;
+  }
+  #bubble-2{
+    top: 27%;
+  }
+  #bubble-4{
+    left: 72%;
+  }
+}
+
+@include media-breakpoint-down(sm){
+  .services-left-side,
+  .services-right-side{
+    height: 700px;
+  }
+  #bubble-1{
+    top: 18%;
+    left: 1%;
+  }
+  #bubble-2{
+    top: 32%;
+    left: 40%;
+  }
+  #bubble-3{
+    top: 50%;
+    left: 14%;
+  }
+  #bubble-4{
+    top: 67%;
+    left: 48%;
+  }
+  #bubble-5{
+    top: 82%;
+    left: 5%;
+  }
+}
+
+@include media-breakpoint-only(xs){
+  #services-bubbles h2{
+    font-size: 3rem;
+  }
+}
