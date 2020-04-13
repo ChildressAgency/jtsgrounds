@@ -23,4 +23,9 @@ jQuery(document).ready(function($){
   new LeaderLine(bubble2, bubble3, lineOptions);
   new LeaderLine(bubble3, bubble4, lineOptions);
   new LeaderLine(bubble1, bubble5, lineOptions);
-});
+
+  $('.grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: 200
+  })
+}); //end jquery
