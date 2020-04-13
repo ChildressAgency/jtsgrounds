@@ -16,6 +16,7 @@
 *******************************/
 @import "includes/bootstrap";
 @import "includes/aos";
+@import "includes/odometer";
 
 /******************************
 * main scss file with gobal
@@ -29,4 +30,6 @@
 @import "includes/header";
 @import "includes/hero";
 @import "includes/homepage";
+@import "includes/aboutpage";
+
 @import "includes/footer";

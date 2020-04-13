@@ -4,6 +4,10 @@
 
   .navbar{
     justify-content: space-around;
+
+    &.top-border{
+      border-top: 2px solid $color-gray;
+    }
   }
 
   .copyright{

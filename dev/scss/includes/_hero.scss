@@ -1,29 +1,34 @@
 #hero{
   padding-top: 100px;
   padding-bottom: 100px;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
 }
 
 .hero-caption{
   color: #fff;
   position: relative;
   z-index: 10;
+  max-width: 500px;
 
   h1{
     font-size: 4rem;
-    font-weight: $font-weight-bold;
-    opacity: .7;
     line-height: 1em;
     margin-bottom: 0;
-  }
-
-  p{
-    font-size: 1.889rem;
+    font-weight: $font-weight-black;
   }
 }
 
 .hp-hero{
   h1{
     font-size: 11.11rem;
+    opacity: .7;
+    font-weight: $font-weight-bold;
+  }
+
+  p{
+    font-size: 1.889rem;
   }
 }
 

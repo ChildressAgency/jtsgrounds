@@ -1,0 +1,100 @@
+#about-mission{
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  .stats{
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 60px;
+
+    .stat{
+      .stat-number{
+        font-size: 2.333rem;
+        font-weight: $font-weight-black;
+        position: relative;
+        padding-left: 100px;
+        display: block;
+        margin-bottom: 6px;
+        margin-top: 25px;
+        
+        &::before{
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          background-image: url(images/sprites.png);
+          background-repeat: no-repeat;
+        }
+      }
+
+      &#happy-customers{
+        .stat-number::before{
+          height: 48px;
+          width: 53px;
+          background-position: 0px -34px;
+          left: 15px;
+          top: -3px;
+        }
+      }
+      &#completed-jobs{
+        .stat-number::before{
+          height: 60px;
+          width: 64px;
+          background-position: -60px -34px;
+          left: 15px;
+          top: -8px;
+        }
+      }
+      &#years-in-business{
+        .stat-number::before{
+          height: 44px;
+          width: 72px;
+          background-position: -134px -34px;
+          top: 4px;
+        }
+      }
+
+      small{
+        display: block;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+
+        span{
+          font-weight: $font-weight-normal;
+          color: $color-gray;
+        }
+      }
+    }
+  }
+}
+
+#our-company{
+  .text-side{
+    padding: 100px 15px;
+    color: #fff;
+    text-align: right;
+    background-color: $color-main;
+  }
+
+  .image-side{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    box-shadow: inset -165px 0 80px -70px $color-main;
+  }
+
+  @include media-breakpoint-down(md){
+    .image-side{
+      height: 600px;
+      box-shadow: inset 0px 165px 80px -70px $color-main;
+    }
+  }
+}
+
+#about-our-team{
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
