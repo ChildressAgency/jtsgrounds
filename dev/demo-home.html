@@ -183,34 +183,57 @@
           <p data-aos="fade-in" data-aos-easing="ease-out" data-aos-delay='500'>Take a look at some of the jobs that we do.</p>
         </header>
       </div>
-      <div class="grid">
-        <div class="grid-item grid-item--width2 grid-item--height2">
-          <div class="gallery-item">
-            <img src="../wp-theme-files/images/office-2x2.jpg" class="img-fluid d-block mx-auto" alt="" />
-            <div class="gallery-item-caption">
-              <h4>JOB TITLE</h4>
-              <p>Job Site</p>
-            </div>
+
+      <div class="gallery">
+        <a href="../wp-theme-files/images/office-2x2.jpg" class="gallery-item" data-toggle="modal" data-target="#gallery-modal" data-jts_full_size="../wp-theme-files/images/office-2x2.jpg" data-jts_job_title="JOB TITLE">
+          <img src="../wp-theme-files/images/office-2x2.jpg" class="img-fluid d-block" alt="" />
+          <div class="gallery-item-caption">
+            <h4>JOB TITLE</h4>
+            <p>Job Site</p>
           </div>
-        </div>
-        <div class="grid-item">
-          <img src="../wp-theme-files/images/office-1x1.jpg" class="img-fluid d-block mx-auto" alt="" />
-        </div>
-        <div class="grid-item">
-          <img src="../wp-theme-files/images/office-1x1.jpg" class="img-fluid d-block mx-auto" alt="" />
-        </div>
-        <div class="grid-item grid-item--width2">
-          <img src="../wp-theme-files/images/office-2x1.jpg" class="img-fluid d-block mx-auto" alt="" />
-        </div>
-        <div class="grid-item grid-item--height2">
-          <img src="../wp-theme-files/images/office-1x2.jpg" class="img-fluid d-block mx-auto" alt="" />
-        </div>
-        <div class="grid-item">
-          <img src="../wp-theme-files/images/office-1x1.jpg" class="img-fluid d-block mx-auto" alt="" />
-        </div>
-        <div class="grid-item">
-          <img src="../wp-theme-files/images/office-1x1.jpg" class="img-fluid d-block mx-auto" alt="" />
-        </div>
+        </a>
+        <a href="../wp-theme-files/images/office-2x2.jpg" class="gallery-item" data-toggle="modal" data-target="#gallery-modal" data-jts_full_size="../wp-theme-files/images/office-2x2.jpg" data-jts_job_title="JOB TITLE 2">
+          <img src="../wp-theme-files/images/office-2x2.jpg" class="img-fluid d-block" alt="" />
+          <div class="gallery-item-caption">
+            <h4>JOB TITLE</h4>
+            <p>Job Site</p>
+          </div>
+        </a>
+        <a class="gallery-item">
+          <img src="../wp-theme-files/images/office-2x2.jpg" class="img-fluid d-block" alt="" />
+          <div class="gallery-item-caption">
+            <h4>JOB TITLE</h4>
+            <p>Job Site</p>
+          </div>
+        </a>
+        <a class="gallery-item">
+          <img src="../wp-theme-files/images/office-2x2.jpg" class="img-fluid d-block" alt="" />
+          <div class="gallery-item-caption">
+            <h4>JOB TITLE</h4>
+            <p>Job Site</p>
+          </div>
+        </a>
+        <a class="gallery-item">
+          <img src="../wp-theme-files/images/office-2x2.jpg" class="img-fluid d-block" alt="" />
+          <div class="gallery-item-caption">
+            <h4>JOB TITLE</h4>
+            <p>Job Site</p>
+          </div>
+        </a>
+        <a class="gallery-item">
+          <img src="../wp-theme-files/images/office-2x2.jpg" class="img-fluid d-block" alt="" />
+          <div class="gallery-item-caption">
+            <h4>JOB TITLE</h4>
+            <p>Job Site</p>
+          </div>
+        </a>
+        <a class="gallery-item">
+          <img src="../wp-theme-files/images/office-2x2.jpg" class="img-fluid d-block" alt="" />
+          <div class="gallery-item-caption">
+            <h4>JOB TITLE</h4>
+            <p>Job Site</p>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -288,6 +311,26 @@
       </div>
     </div>
   </footer>
+
+  <div id="gallery-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 id="job-title" class="modal-title"></h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <img src="" id="gallery-image" class="img-fluid d-block mx-auto" alt="" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-main" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <svg xmlns="https://www.w3.org/2000/svg" width="0" height="0" display="none">
     <symbol id="icon-phone" viewBox="0 0 512 512">
