@@ -1,0 +1,72 @@
+#what-we-do{
+  background-image: url(images/lawn-with-gradient.jpg);
+  padding-top: 40px;
+  padding-bottom: 60px;
+  color: #fff;
+  text-align: center;
+
+  header{
+    border-bottom: 2px solid #fff;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .landscaping-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .landscaping-card{
+    max-width: 350px;
+    margin: 40px;
+
+    h3{
+      padding-top: 80px;
+      position: relative;
+      font-size: 1.667rem;
+      font-weight: $font-weight-bold;
+
+      &::before{
+        content: "";
+        position: absolute;
+        background-image: url(images/sprites.png);
+        background-repeat: no-repeat;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &#turf-care h3::before{
+      height: 76px;
+      width: 103px;
+      background-position: 0px -104px;
+    }
+    &#fertilization h3::before{
+      height: 80px;
+      width: 82px;
+      background-position: -124px -104px;
+    }
+    &#mulching h3::before{
+      height: 63px;
+      width: 105px;
+      background-position: 0px -200px;
+    }
+    &#seasonal h3::before{
+      height: 80px;
+      width: 49px;
+      background-position: -140px -195px;
+    }
+    &#storm h3::before{
+      height: 69px;
+      width: 82px;
+      background-position: 0px -280px;
+    }
+
+    p{
+      line-height: 1.2em;
+    }
+  }
+}
