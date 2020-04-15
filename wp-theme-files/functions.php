@@ -1,8 +1,11 @@
 <?php
 add_action('wp_footer', 'show_template');
 function show_template() {
-	global $template;
-	print_r($template);
+  global $template;
+  
+  if(WP_DEBUG === true){
+    print_r($template);
+  }
 }
 
 add_action('wp_enqueue_scripts', 'jquery_cdn');
@@ -14,8 +17,8 @@ function jquery_cdn(){
   }
 }
 
-add_action('wp_enqueue_scripts', 'cai_scripts');
-function cai_scripts(){
+add_action('wp_enqueue_scripts', 'jtsgrounds_scripts');
+function jtsgrounds_scripts(){
   wp_register_script(
     'bootstrap-popper',
     'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js',
@@ -33,7 +36,7 @@ function cai_scripts(){
   );
 
   wp_register_script(
-    'cai-scripts',
+    'jtsgrounds-scripts',
     get_stylesheet_directory_uri() . '/js/custom-scripts.min.js',
     array('jquery', 'bootstrap-scripts'),
     '',
@@ -42,11 +45,11 @@ function cai_scripts(){
 
   wp_enqueue_script('bootstrap-popper');
   wp_enqueue_script('bootstrap-scripts');
-  wp_enqueue_script('cai-scripts');
+  wp_enqueue_script('jtsgrounds-scripts');
 }
 
-add_filter('script_loader_tag', 'cai_add_script_meta', 10, 2);
-function cai_add_script_meta($tag, $handle){
+add_filter('script_loader_tag', 'jtsgrounds_add_script_meta', 10, 2);
+function jtsgrounds_add_script_meta($tag, $handle){
   switch($handle){
     case 'jquery':
       $tag = str_replace('></script>', ' integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>', $tag);
@@ -64,52 +67,96 @@ function cai_add_script_meta($tag, $handle){
   return $tag;
 }
 
-add_action('wp_enqueue_scripts', 'cai_styles');
-function cai_styles(){
+add_action('wp_enqueue_scripts', 'jtsgrounds_styles');
+function jtsgrounds_styles(){
   wp_register_style(
     'google-fonts',
-    'https://fonts.googleapis.com/css?family=Maitree:400,700|Nunito+Sans:400,600,700|Nunito:700'
+    '//fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap'
   );
 
   wp_register_style(
-    'fontawesome',
-    'https://use.fontawesome.com/releases/v5.6.3/css/all.css'
-  );
-
-  wp_register_style(
-    'cai-css',
+    'jtsgrounds-css',
     get_stylesheet_directory_uri() . '/style.css'
   );
 
   wp_enqueue_style('google-fonts');
-  wp_enqueue_style('fontawesome');
-  wp_enqueue_style('cai-css');
+  wp_enqueue_style('jtsgrounds-css');
 }
 
-add_filter('style_loader_tag', 'cai_add_css_meta', 10, 2);
-function cai_add_css_meta($link, $handle){
-  switch($handle){
-    case 'fontawesome':
-      $link = str_replace('/>', ' integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">', $link);
-      break;
-  }
-
-  return $link;
-}
-
-add_action('after_setup_theme', 'cai_setup');
-function cai_setup(){
+add_action('after_setup_theme', 'jtsgrounds_setup');
+function jtsgrounds_setup(){
   add_theme_support('post-thumbnails');
   //set_post_thumbnail_size(320, 320);
+
+  add_theme_support(
+    'html5',
+    array(
+      'comment-form',
+      'comment-list',
+      'gallery',
+      'caption'
+    )
+  );
+
+  add_theme_support('editor-styles');
+  add_editor_style('style-editor.css');
+
+  add_theme_support('wp-block-styles');
+  add_theme_support('responsive-embeds');
 
   register_nav_menus(array(
     'header-nav' => 'Header Navigation',
     'footer-nav' => 'Footer Navigation',
-    'company-menu' => 'Company Footer Menu',
-    'services-menu' => 'Services Footer Menu'
   ));
 
-  load_theme_textdomain('cai', get_stylesheet_directory_uri() . '/languages');
+  load_theme_textdomain('jtsgrounds', get_stylesheet_directory_uri() . '/languages');
 }
 
 require_once dirname(__FILE__) . '/includes/class-wp-bootstrap-navwalker.php';
+
+function jtsground_header_fallback_menu(){ ?>
+  <div id="header-nav" class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item<?php if(is_front_page()){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('home')); ?>" class="nav-link" title="Home">Home</a>
+      </li>
+      <li class="nav-item<?php if(is_page('about-us')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('about-us')); ?>" class="nav-link" title="About Us">About Us</a>
+      </li>
+      <?php
+        $services_page = get_page_by_path('services');
+        $services_page_id = $services_page->ID;
+        global $post;
+      ?>
+      <li class="nav-item dropdown<?php if(is_page('services') || ($post->post_parent == $services_page_id)){ echo ' active'; } ?>">
+        <a href="#" class="nav-link dropdown-toggle text-nowrap" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Services">Services</a>
+        <ul class="dropdown-menu">
+          <li class="nav-item<?php if(is_page('forestry-mulching')){ echo ' active'; } ?>">
+            <a href="<?php echo esc_url(home_url('forestry-mulching')); ?>" class="dropdown-item">Forestry Mulching</a>
+          </li>
+          <li class="nav-item<?php if(is_page('drainage-services')){ echo ' active'; } ?>">
+            <a href="<?php echo esc_url(home_url('drainage-services')); ?>" class="dropdown-item">Drainage Services</a>
+          </li>
+          <li class="nav-item<?php if(is_page('landscaping-services')){ echo ' active'; } ?>">
+            <a href="<?php echo esc_url(home_url('landscaping-services')); ?>" class="dropdown-item">Landscaping Services</a>
+          </li>
+          <li class="nav-item<?php if(is_page('land-clearing')){ echo ' active'; } ?>">
+            <a href="<?php echo esc_url(home_url('land-clearing')); ?>" class="dropdown-item">Land Clearing</a>
+          </li>
+          <li class="nav-item<?php if(is_page('snow-and-ice-management')){ echo ' active'; } ?>">
+            <a href="<?php echo esc_url(home_url('snow-and-ice-management')); ?>" class="dropdown-item">Snow & Ice Management</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item<?php if(is_page('portfolio')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('portfoio')); ?>" class="nav-link" title="Portfolio">Portfolio</a>
+      </li>
+      <li class="nav-item<?php if(is_page('testimonials')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('testimonials')); ?>" class="nav-link" title="Testimonials">Testimonials</a>
+      </li>
+      <li class="nav-item<?php if(is_page('contact')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('contact')); ?>" class="nav-link" title="Contact Us">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+<?php }
