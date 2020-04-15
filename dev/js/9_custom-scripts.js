@@ -54,6 +54,13 @@ jQuery(document).ready(function($){
       });
     }
   });
+
+  var testimonials = new Swiper('#testimonials .swiper-container', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  });
 }); //end jquery
 
 function isInViewport(element, offset){

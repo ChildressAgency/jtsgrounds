@@ -1,0 +1,83 @@
+#testimonials{
+
+  .testimonials{
+    margin-top: 40px;
+  }
+
+  .testimonial{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .testimonial-inner{
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: $color-alt-dark;
+    background-color: #f2f2f2;
+    box-shadow: 5px 5px 10px #444;
+    padding: 15px;
+  }
+
+  .star-rating{
+    display: block;
+    background-image: url(images/sprites.png);
+    background-repeat: no-repeat;
+    height: 68px;
+    width: 390px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &.stars-5{
+      background-position: 0px -368px;
+    }
+    &.stars-4{
+      background-position: 0px -441px;
+    }
+    &.stars-3{
+      background-position: 0px -519px;
+    }
+    &.stars-2{
+      background-position: 0px -591px;
+    }
+    &.stars-1{
+      background-position: 0px -664px;
+    }
+  }
+
+  blockquote{
+    margin-top: 15px;
+
+    p{
+      font-size: 1.556rem;
+    }
+
+    cite{
+      font-size: 1.556rem;
+    }
+
+    .date{
+      font-size: 1.333rem;
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev{
+    background-color: $color-alt-dark;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    color: #fff;
+  }
+  .swiper-button-next{
+    padding-left: 9px;
+  }
+  .swiper-button-prev{
+    padding-right: 2px;
+  }
+}
+
+#leave-a-review{
+  margin-top: 80px;
+}
