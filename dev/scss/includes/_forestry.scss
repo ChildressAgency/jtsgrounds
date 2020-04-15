@@ -1,0 +1,35 @@
+#forestry-details{
+  background-image: url(images/fuzzy-workers-bg.jpg);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #fff;
+  margin-bottom: 100px;
+
+  .mulching-image{
+    position: absolute;
+    bottom: -120px;
+    left: -40px;
+  }
+}
+
+@include media-breakpoint-down(md){
+  #forestry-details{
+    margin-bottom: 0;
+  }
+  .mulching-image{
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+#more-content{
+  padding-top: 40px;
+  padding-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

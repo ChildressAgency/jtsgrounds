@@ -5,6 +5,7 @@ body{
   font-family: $font-family-main;
   font-size: 1rem;
   color: $color-main;
+  overflow-x: hidden;
 }
 
 @include media-breakpoint-up(md){
@@ -30,6 +31,10 @@ section{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+.container-fluid{
+  max-width: 1400px;
 }
 
 a,
