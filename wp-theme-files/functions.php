@@ -114,7 +114,7 @@ function jtsgrounds_setup(){
 
 require_once dirname(__FILE__) . '/includes/class-wp-bootstrap-navwalker.php';
 
-function jtsground_header_fallback_menu(){ ?>
+function jtsgrounds_header_fallback_menu(){ ?>
   <div id="header-nav" class="collapse navbar-collapse">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item<?php if(is_front_page()){ echo ' active'; } ?>">
@@ -149,7 +149,7 @@ function jtsground_header_fallback_menu(){ ?>
         </ul>
       </li>
       <li class="nav-item<?php if(is_page('portfolio')){ echo ' active'; } ?>">
-        <a href="<?php echo esc_url(home_url('portfoio')); ?>" class="nav-link" title="Portfolio">Portfolio</a>
+        <a href="<?php echo esc_url(home_url('portfolio')); ?>" class="nav-link" title="Portfolio">Portfolio</a>
       </li>
       <li class="nav-item<?php if(is_page('testimonials')){ echo ' active'; } ?>">
         <a href="<?php echo esc_url(home_url('testimonials')); ?>" class="nav-link" title="Testimonials">Testimonials</a>
@@ -160,3 +160,52 @@ function jtsground_header_fallback_menu(){ ?>
     </ul>
   </div>
 <?php }
+
+function jtsgrounds_footer_fallback_menu(){ ?>
+  <div id="footer-nav" class="">
+    <ul class="navbar-nav">
+      <li class="nav-item<?php if(is_front_page()){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('home')); ?>" class="nav-link" title="Home">Home</a>
+      </li>
+      <li class="nav-item<?php if(is_page('about-us')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('about-us')); ?>" class="nav-link" title="About Us">About Us</a>
+      </li>
+      <?php
+        $services_page = get_page_by_path('services');
+        $services_page_id = $services_page->ID;
+        global $post;
+      ?>
+      <li class="nav-item<?php if(is_page('services') || ($post->post_parent == $services_page_id)){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('services')); ?>" class="nav-link" title="Services">Services</a>
+      </li>
+      <li class="nav-item<?php if(is_page('portfolio')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('portfolio')); ?>" class="nav-link" title="Portfolio">Portfolio</a>
+      </li>
+      <li class="nav-item<?php if(is_page('testimonials')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('testimonials')); ?>" class="nav-link" title="Testimonials">Testimonials</a>
+      </li>
+      <li class="nav-item<?php if(is_page('contact')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('contact')); ?>" class="nav-link" title="Contact Us">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+<?php }
+
+add_filter('block_categories', 'jtsgrounds_custom_block_category', 10, 2);
+function jtsgrounds_custom_block_category($categories, $post){
+  return array_merge(
+    $categories,
+    array(
+      'slug' => 'custom-blocks',
+      'title' => esc_html('Custom Blocks', 'jtsgrounds'),
+      'icon' => 'wordpress'
+    )
+  );
+}
+
+add_action('acf/init', 'jtsgrounds_register_blocks');
+function jtsgrounds_register_blocks(){
+  if(function_exists('acf_register_block_type')){
+    
+  }
+}
