@@ -206,6 +206,15 @@ function jtsgrounds_custom_block_category($categories, $post){
 add_action('acf/init', 'jtsgrounds_register_blocks');
 function jtsgrounds_register_blocks(){
   if(function_exists('acf_register_block_type')){
-    
+    acf_register_block_type(array(
+      'name' => 'prestyled_button',
+      'title' => esc_html('Pre-styled button', 'jtsgrounds'),
+      'description' => esc_html('Add a pre-styled button', 'jtsgrounds'),
+      'category' => 'custom-blocks',
+      'mode' => 'auto',
+      'align' => 'full',
+      'render_template' => get_stylesheet_directory() . '/partials/blocks/prestyled_button.php',
+      'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/prestyled_button.css'
+    ));
   }
 }
