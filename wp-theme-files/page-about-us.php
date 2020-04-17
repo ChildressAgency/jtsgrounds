@@ -52,6 +52,11 @@
             <div class="col-lg-7 text-side order-1 order-lg-2">
               <article class="section-content" data-aos="fade-left" data-aos-easing="ease-out">
                 <?php echo apply_filters('the_content', $our_company_content); ?>
+                <?php 
+                  $our_company_button = get_field('our_company_section_button');
+                  if($our_company_button): ?>
+                    <a href="<?php echo esc_url($our_company_button['url']); ?>" class="btn-main btn-grow"><?php echo esc_html($our_company_button['title']); ?></a>
+                  <?php endif; ?>
               </article>  
             </div>
           </div>
