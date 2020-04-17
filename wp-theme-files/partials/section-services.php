@@ -1,4 +1,8 @@
-<?php if(have_rows('services')): ?>
+<?php 
+$services_page = get_page_by_path('services');
+$services_page_id = $services_page->ID;
+
+if(have_rows('services', $services_page_id)): ?>
   <section id="services">
     <div class="row no-gutters">
       <div class="col-md-6 services-left-side"></div>
@@ -7,7 +11,7 @@
     <div id="services-bubbles" class="white-shadow-inner">
       <div class="container">
         <h2>OUR SERVICES</h2>
-        <?php $s = 1; while(have_rows('services')): the_row(); ?>
+        <?php $s = 1; while(have_rows('services', $services_page_id)): the_row(); ?>
 
           <?php
             $service_title = get_sub_field('service_title');
