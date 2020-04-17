@@ -99,5 +99,5 @@
       </svg>
     </a>
 
-    <div class="jts-overlay white-shadow-inner"></div>
+    <div class="jts-overlay<?php if(!is_page('services')){ echo ' white-shadow-inner'; } ?>"></div>
   </section>

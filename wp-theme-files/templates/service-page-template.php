@@ -60,7 +60,7 @@ get_header(); ?>
     </div>
   </section>
 
-  <?php if(is_page('forestry-mulching')){ get_template_part('partials', 'forestry_details'); } ?>
+  <?php if(is_page('forestry-mulching')){ get_template_part('partials/forestry_details'); } ?>
 
   <?php 
     $additional_content = get_field('additional_content_section'); 

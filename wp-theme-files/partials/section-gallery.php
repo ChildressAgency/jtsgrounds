@@ -18,12 +18,12 @@
     <?php if(have_rows('gallery_images')): while(have_rows('gallery_images')): the_row(); ?>
 
       <?php
-        $gallery_image = get_field('gallery_image');
-        $gallery_image_title = get_field('gallery_image_title');
-        $gallery_image_description = get_field('gallery_image_description');
+        $gallery_image = get_sub_field('gallery_image');
+        $gallery_image_title = get_sub_field('gallery_image_title');
+        $gallery_image_description = get_sub_field('gallery_image_description');
       ?>
       <a href="<?php echo esc_url($gallery_image['url']); ?>" class="gallery-item" data-toggle="modal" data-target="#gallery-modal" data-jts_full_size="<?php echo esc_attr($gallery_image['url']); ?>" data-jts_job_title="<?php echo esc_attr($gallery_image_title); ?>">
-        <img src="<?php echo esc_url($gallery_image['sizes']['medium']); ?>" class="img-fluid d-block" alt="<?php echo esc_attr($gallery_image['alt']); ?>" />
+        <img src="<?php echo esc_url($gallery_image['sizes']['gallery-thumb']); ?>" class="img-fluid d-block" alt="<?php echo esc_attr($gallery_image['alt']); ?>" />
         <div class="gallery-item-caption">
           <h4><?php echo esc_html($gallery_image_title); ?></h4>
           <p><?php echo esc_html($gallery_image_description); ?></p>

@@ -87,6 +87,7 @@ add_action('after_setup_theme', 'jtsgrounds_setup');
 function jtsgrounds_setup(){
   add_theme_support('post-thumbnails');
   //set_post_thumbnail_size(320, 320);
+  add_image_size('gallery-thumb', 300, 300, true);
 
   add_theme_support(
     'html5',

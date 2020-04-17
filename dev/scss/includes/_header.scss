@@ -69,7 +69,7 @@
     }
   }
 
-  &.nav-item.actvie .nav-link,
+  .nav-item.active .nav-link,
   .nav-link:hover,
   .nav-link:focus{
     font-weight: $font-weight-bold;

@@ -39,6 +39,7 @@ section{
 
 a,
 button,
+.btn,
 input[type="submit"]{
   transition: all .2s ease;
 }
@@ -52,6 +53,7 @@ input[type="submit"]{
   background-color: $color-alt;
   padding: 5px 25px;
   border: none;
+  border-radius: 0;
   transform: scale(1);
   transform-origin: 0px;
 
