@@ -191,6 +191,17 @@ function jtsgrounds_footer_fallback_menu(){ ?>
   </div>
 <?php }
 
+add_action('acf/init', 'jtsgrounds_acf_options_page');
+function jtsgrounds_acf_options_page(){
+  acf_add_options_page(array(
+    'page_title' => esc_html__('General Settings', 'jtsgrounds'),
+    'menu_title' => esc_html__('General Settings', 'jtsgrounds'),
+    'menu_slug' => 'general-settings',
+    'capability' => 'edit_posts',
+    'redirect' => false
+  ));
+}
+
 add_filter('block_categories', 'jtsgrounds_custom_block_category', 10, 2);
 function jtsgrounds_custom_block_category($categories, $post){
   return array_merge(
