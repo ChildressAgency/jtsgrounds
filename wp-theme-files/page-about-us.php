@@ -2,13 +2,7 @@
   <main id="main">
     <section id="about-mission">
       <div class="container">
-        <?php
-          $bg_word = get_field('background_word');
-          if($bg_word): ?>
-            <div class="bg-text">
-              <span><?php echo esc_html($bg_word); ?></span>
-            </div>
-        <?php endif; ?>
+        <?php get_template_part('partials', 'background_word'); ?>
         <div class="row">
           <div class="col-lg-7">
             <article class="section-content" data-aos="fade-right" data-aos-easing="ease-out" data-aos-delay="750">
@@ -40,7 +34,7 @@
               <?php 
                 $about_us_image = get_field('about_us_image');
                 if($about_us_image): ?>
-                  <img src="<?php echo esc_url($about_us_image['url']); ?>" class="img-fluid d-block" alt="<?php echo esc_attr($about_us_image['alt']); ?>" data-aos="fade-in" data-aos-easing="eas-out" data-aos-delay="500" />
+                  <img src="<?php echo esc_url($about_us_image['url']); ?>" class="img-fluid d-block" alt="<?php echo esc_attr($about_us_image['alt']); ?>" data-aos="fade-in" data-aos-easing="ease-out" data-aos-delay="500" />
               <?php endif; ?>
             </div>
           </div>
