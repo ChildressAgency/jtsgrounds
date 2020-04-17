@@ -58,7 +58,7 @@
       </nav>
 
       <div class="copyright">
-        <p>&copy;<?php echo date('Y'); ?> <?php echo esc_html(blogingo('name')); ?></p>
+        <p>&copy;<?php echo date('Y'); ?> <?php echo esc_html(bloginfo('name')); ?></p>
         <p>website created by <a href="https://childressagency.com" target="_blank">Childress Agency</a></p>
       </div>
     </div>

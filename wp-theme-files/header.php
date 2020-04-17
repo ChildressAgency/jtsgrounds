@@ -27,7 +27,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a href="<?php echo esc_url(home_url()); ?>" class="logo">
-          <img src="<?php echo get_stylesheet_directory_url(); ?>/images/logo.png" class="img-fluid d-block" alt="<?php echo esc_attr(bloginfo('name')); ?> Logo" />
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" class="img-fluid d-block" alt="<?php echo esc_attr(bloginfo('name')); ?> Logo" />
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-nav" aria-controls="header-nav" aria-expanded="false" aria-label="Toggle Navigation">
@@ -66,7 +66,7 @@
       $hero_image_css = get_field('hero_default_image_css', 'option');
     }
   ?>
-  <section id="hero" class="<?php if(is_front_page()){ echo ' hp-hero'; } ?>" style="background-image: url(<?php echo esc_url($hero_image); ?>); <?php echo esc_attr($hero_image_css); ?>>
+  <section id="hero" class="<?php if(is_front_page()){ echo ' hp-hero'; } ?>" style="background-image: url(<?php echo esc_url($hero_image['url']); ?>); <?php echo esc_attr($hero_image_css); ?>">
     <div class="container">
       <div class="hero-caption" data-aos="fade-right" data-aos-easing="ease-out">
         <?php

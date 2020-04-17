@@ -207,9 +207,11 @@ function jtsgrounds_custom_block_category($categories, $post){
   return array_merge(
     $categories,
     array(
-      'slug' => 'custom-blocks',
-      'title' => esc_html('Custom Blocks', 'jtsgrounds'),
-      'icon' => 'wordpress'
+      array(
+        'slug' => 'custom-blocks',
+        'title' => esc_html('Custom Blocks', 'jtsgrounds'),
+        'icon' => 'wordpress'
+      )
     )
   );
 }
