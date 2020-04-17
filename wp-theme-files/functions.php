@@ -232,3 +232,37 @@ function jtsgrounds_register_blocks(){
     ));
   }
 }
+
+add_action('init', 'jtsgrounds_create_post_types');
+function jtsgrounds_create_post_types(){
+  $portfolio_labels = array(
+    'name' => esc_html_x('Portfolios', 'post type name', 'jtsgrounds'),
+    'singular_name' => esc_html_x('Portfolio', 'post type singular name', 'jtsgrounds'),
+    'menu_name' => esc_html_x('Portfolios', 'post type menu name', 'jtsgrounds'),
+    'add_new_item' => esc_html__('Add New Portfolio', 'jtsgrounds'),
+    'search_items' => esc_html__('Search Portfolios', 'jtsgrounds'),
+    'edit_item' => esc_html__('Edit Portfolio', 'jtsgrounds'),
+    'view_item' => esc_html__('View Portfolio', 'jtsgrounds'),
+    'all_items' => esc_html__('All Portfolios', 'jtsgrounds'),
+    'new_item' => esc_html__('New Portfolio', 'jtsgrounds'),
+    'not_found' => esc_html__('No Portfolios Found', 'jtsgrounds')
+  );
+
+  $portfolio_args = array(
+    'labels' => $portfolio_labels,
+    'capability_type' => 'post',
+    'public' => true,
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-portfolio',
+    'query_car' => 'portfolio',
+    'has_archive' => false,
+    'show_in_rest' = true,
+    'support' => array(
+      'title',
+      'editor',
+      'custom_fields',
+      'revisions'
+    )
+  );
+  register_post_type('portfolio', $portfolio_args);
+}
