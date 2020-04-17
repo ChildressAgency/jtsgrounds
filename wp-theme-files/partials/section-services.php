@@ -18,7 +18,7 @@ if(have_rows('services', $services_page_id)): ?>
             $service_link = get_sub_field('service_link');
             $service_image = get_sub_field('service_image');
           ?>
-          <a href="<?php echo esc_url($service_link['url']); ?>" id="bubble-<?php echo $s; ?>" class="service-bubble" style="background-image: url(<?php echo esc_url($service_image['url']); ?>);">
+          <a href="<?php echo esc_url($service_link['url']); ?>" id="bubble-<?php echo $s; ?>" class="service-bubble" style="background-image: url(<?php echo esc_url($service_image['sizes']['medium']); ?>);">
             <div class="bubble-inner">
               <h3><?php echo esc_html($service_title); ?></h3>
             </div>
