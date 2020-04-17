@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php 
+/**
+ * Template Name: Services Page Template
+ * Description: Template for the Services pages
+ */
+get_header(); ?>
 <main id="main">
   <section id="about-mission">
     <div class="container">
