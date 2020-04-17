@@ -67,9 +67,6 @@
               <div class="col-lg-6">
                 <article class="section-content">
                   <?php echo apply_filters('the_content', $our_team_content); ?>
-                  <blockquote>
-                    <p>"Quote from a <strong>customer or an employee</strong> will go here."</p>
-                  </blockquote>
                 </article>
               </div>
               <div class="col-lg-6">
