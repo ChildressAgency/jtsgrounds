@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Gallery Template
- * Description: Page with a gallery below the content
+ * Description: Page template with a gallery below the content
  */
 get_header(); ?>
 <main id="main">
