@@ -85,7 +85,7 @@
       </div>
     </div>
 
-    <?php if(is_front_page() && get_field('show_average_rating')): ?>
+    <?php if(get_field('show_average_rating')): ?>
       <div class="customer-rating d-none d-sm-block" data-aos="fade-left" data-aos-easing="ease-out">
         <h4>9.5/10</h4>
         <span class="star-rating"></span>
