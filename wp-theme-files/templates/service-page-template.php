@@ -76,6 +76,6 @@ get_header(); ?>
 
   <?php get_template_part('partials/section', 'gallery'); ?>
 
-  <?php if(is_page('landscaping-services')){ get_template_part('partials', 'landscaping_services'); } ?>
+  <?php if(is_page('landscaping-services')){ get_template_part('partials/landscaping_services'); } ?>
 </main>
 <?php get_footer();
