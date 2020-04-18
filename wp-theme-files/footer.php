@@ -64,26 +64,6 @@
     </div>
   </footer>
 
-  <div id="gallery-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 id="job-title" class="modal-title"></h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
-        <div class="modal-body">
-          <img src="" id="gallery-image" class="img-fluid d-block mx-auto" alt="" />
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn-main" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <?php get_template_part('partials/sprites.svg'); ?>
   <?php wp_footer(); ?>
 </body>

@@ -34,16 +34,14 @@ jQuery(document).ready(function($){
     e.preventDefault();
   });
 
-  $('#gallery-modal').on('show.bs.modal', function(e){
-    var galleryItem = $(e.relatedTarget);
-    var jtsFullSize = galleryItem.data('jts_full_size');
-    var jtsJobTitle = galleryItem.data('jts_job_title');
-    //var jtsJobSite = galleryItem.data('jts_job_site');
-    var modal = $(this);
+  $('#gallery-carousel').on('slid.bs.carousel', function(e){
+    var curSlide = $(e.relatedTarget);
+    var imgTitle = curSlide.data('image_title');
+    var imgCaption = curSlide.data('image_caption');
+    var modal = $('#gallery-modal');
 
-    modal.find('#job-title').text(jtsJobTitle);
-    //modal.find('#job-site').text(jtsJobSite);
-    modal.find('#gallery-image').attr('src', jtsFullSize);
+    modal.find('#image-title').text(imgTitle);
+    modal.find('#image-caption').text(imgCaption);
   });
 
   $(window).on('scroll', function(){
