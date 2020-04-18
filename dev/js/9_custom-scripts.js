@@ -30,7 +30,7 @@ jQuery(document).ready(function($){
     new LeaderLine(bubble1, bubble5, lineOptions);
   }
 
-  $('.gallery-item').on('click', function(e){
+  $('a[data-toggle="modal"').on('click', function(e){
     e.preventDefault();
   });
 

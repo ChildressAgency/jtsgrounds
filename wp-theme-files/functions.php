@@ -256,7 +256,7 @@ function jtsgrounds_create_post_types(){
     'menu_icon' => 'dashicons-portfolio',
     'query_car' => 'portfolio',
     'has_archive' => false,
-    'show_in_rest' = true,
+    'show_in_rest' => true,
     'support' => array(
       'title',
       'editor',

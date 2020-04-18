@@ -27,6 +27,7 @@
         <div class="gallery-item-caption">
           <h4><?php echo esc_html($gallery_image_title); ?></h4>
           <p><?php echo esc_html($gallery_image_description); ?></p>
+          <span class="plus">+</span>
         </div>
       </a>
 
