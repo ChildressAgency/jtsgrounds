@@ -77,5 +77,17 @@ get_header(); ?>
   <?php get_template_part('partials/section', 'gallery'); ?>
 
   <?php if(is_page('landscaping-services')){ get_template_part('partials/landscaping_services'); } ?>
+
+  <?php 
+    $additional_content_2 = get_field('additional_content_section_2');
+    if($additional_content_2): ?>
+      <section id="more-content2" style="padding-top:40px; padding-bottom:60px;">
+        <div class="container">
+          <article data-aos="fade-in" data-aos-easing="ease-out">
+            <?php echo apply_filters('the_content', $additional_content_2); ?>
+          </article>
+        </div>
+      </section>
+    <?php endif; ?>
 </main>
 <?php get_footer();
