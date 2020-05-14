@@ -9,7 +9,8 @@ jQuery(document).ready(function($){
       bubble2 = document.getElementById('bubble-2'),
       bubble3 = document.getElementById('bubble-3'),
       bubble4 = document.getElementById('bubble-4'),
-      bubble5 = document.getElementById('bubble-5');
+      bubble5 = document.getElementById('bubble-5'),
+      bubble6 = document.getElementById('bubble-6');
   var lineOptions = {
     color: '#fff',
     size: 4,
@@ -23,11 +24,13 @@ jQuery(document).ready(function($){
     || (typeof (bubble2) !== 'undefined' && bubble2 !== null)
     || (typeof (bubble3) !== 'undefined' && bubble3 !== null)
     || (typeof (bubble4) !== 'undefined' && bubble4 !== null)
-    || (typeof (bubble5) !== 'undefined' && bubble5 !== null)){
+    || (typeof (bubble5) !== 'undefined' && bubble5 !== null)
+    || (typeof (bubble6) !== 'undefined' && bubble6 !== null)){
     new LeaderLine(bubble1, bubble2, lineOptions);
     new LeaderLine(bubble2, bubble3, lineOptions);
     new LeaderLine(bubble3, bubble4, lineOptions);
     new LeaderLine(bubble1, bubble5, lineOptions);
+    new LeaderLine(bubble4, bubble6, lineOptions); 
   }
 
   $('a[data-toggle="modal"').on('click', function(e){

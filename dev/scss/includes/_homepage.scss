@@ -66,7 +66,7 @@
 
 .services-left-side,
 .services-right-side{
-  height: 900px;
+  height: 1000px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -213,20 +213,24 @@
   left: 0;
 }
 #bubble-2{
-  top: 20%;
+  top: 17%;
   left: 65%;
 }
 #bubble-3{
-  top: 50%;
+  top: 41%;
   left: 35%;
 }
 #bubble-4{
-  top: 68%;
+  top: 59%;
   left: 80%;
 }
 #bubble-5{
-  top: 62%;
+  top: 54%;
   left: 5%;
+}
+#bubble-6{
+  top: 78%;
+  left: 48%;
 }
 
 @include media-breakpoint-down(lg){
@@ -239,6 +243,10 @@
   #bubble-4{
     left: 72%;
   }
+  #bubble-6{
+    top: 80%;
+    left: 43%;
+  }
 }
 
 @include media-breakpoint-down(sm){
@@ -247,24 +255,28 @@
     height: 700px;
   }
   #bubble-1{
-    top: 18%;
+    top: 15%;
     left: 1%;
   }
   #bubble-2{
-    top: 32%;
+    top: 26%;
     left: 40%;
   }
   #bubble-3{
-    top: 50%;
+    top: 58%;
     left: 14%;
   }
   #bubble-4{
-    top: 67%;
+    top: 72%;
     left: 48%;
   }
   #bubble-5{
-    top: 82%;
+    top: 40%;
     left: 5%;
+  }
+  #bubble-6{
+    top: 86%;
+    left: 13%;
   }
 }
 
