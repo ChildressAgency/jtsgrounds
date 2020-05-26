@@ -57,6 +57,30 @@
         </div>
       </nav>
 
+      <?php
+        $loc_phone = get_field('phone_number', 'option');
+        $loc_email = get_field('email', 'option');
+        $loc_address = get_field('address', 'option');
+        $loc_city = get_field('city', 'option');
+        $loc_state = get_field('state', 'option');
+        $loc_zip = get_field('zip', 'option');
+       ?>
+      <div class="location" itemscope itemtype="https://schema.org/LocalBusiness">
+        <p class="location-name"><span itemprop="name"><?php echo esc_html(bloginfo('name')); ?></span></p>
+        <p class="location-phone">
+          <a href="<?php echo esc_url('tel:' . $loc_phone); ?>"><span itemprop="telephone"><?php echo esc_html($loc_phone); ?></span>
+          </a>
+        </p>
+        <?php if($loc_email): ?>
+          <p class="location-email">
+            <a href="<?php echo esc_url('mailto:' . $loc_email); ?>"><span itemprop="email"><?php echo esc_html($loc_email); ?></span>
+            </a>
+          </p>
+        <?php endif; ?>
+        <p class="location-address"><span itemprop="streetAddress"><?php echo esc_html($loc_address); ?></span><br /><span itemprop="addressLocality"><?php echo esc_html($loc_city); ?></span>,&nbsp;<span itemprop="addressRegion"><?php echo esc_html($loc_state); ?></span>&nbsp;<span itemprop="postalCode"><?php echo esc_html($loc_zip); ?></span></p>
+        <p>
+      </div>
+
       <div class="copyright">
         <p>&copy;<?php echo date('Y'); ?> <?php echo esc_html(bloginfo('name')); ?></p>
         <p>website created by <a href="https://childressagency.com" target="_blank">Childress Agency</a></p>
