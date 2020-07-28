@@ -56,7 +56,6 @@
   text-align: right;
 
   h2{
-    font-size: 5rem;
     letter-spacing: 6px;
   }
   p{
@@ -291,10 +290,6 @@
     padding: 100px 15px;
     color: #fff;
     background-color: $color-main;
-
-    h2{
-      font-size: 5rem;
-    }
 
     .btn-main:hover,
     .btn-main:focus{
